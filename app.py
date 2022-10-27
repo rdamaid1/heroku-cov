@@ -11,6 +11,8 @@ from propy import PyPro
 from propy.GetProteinFromUniprot import GetProteinSequence
 from propy.PyPro import GetProDes
 import pandas as pd
+import tensorflow as tf
+from tensorflow import keras
 
 import pickle
 import numpy as np
