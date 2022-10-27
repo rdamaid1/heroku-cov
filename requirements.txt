@@ -48,6 +48,7 @@ six
 sklearn
 tensorboard-plugin-wit
 termcolor
+tensorflow
 threadpoolctl
 tqdm
 urllib3
