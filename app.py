@@ -27,7 +27,7 @@ def predict():
     fp = temp[2:883]
     list0 = list(fp)
     for i in range(len(list0)):
-    list0[i] = float(list0[i])
+        list0[i] = float(list0[i])
     
     # download the protein sequence by uniprot id
     proteinsequence = GetProteinSequence(target0)
