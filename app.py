@@ -6,6 +6,7 @@ from pywebio.output import *
 import argparse
 from pywebio import start_server
 
+from pywebio.session import run_js
 import pubchempy as pcp
 from propy import PyPro
 from propy.GetProteinFromUniprot import GetProteinSequence
