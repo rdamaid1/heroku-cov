@@ -54,7 +54,7 @@ def predict():
             ['Content', 'Description'],
             ['Drug (ligand)', str(ligand0)],
             ['Target (protein)', target0],
-            ['Prediction score', str(output*100) + ' %']
+            ['Prediction score', str(format(output*100, '.5f')) + ' %']
         ])
     
     put_button('Predict another interaction...', onclick = lambda: run_js('window.location.reload()'))
