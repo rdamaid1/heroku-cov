@@ -51,6 +51,7 @@ def predict():
         put_text("Sorry, the ligand protein interaction cannot be predicted")
 
     else:
+        put_text()
         put_table([
             ['Content', 'Description'],
             ['Drug (ligand)', str(ligand0)],
