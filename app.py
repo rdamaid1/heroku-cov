@@ -21,6 +21,8 @@ app = Flask(__name__)
 
 
 def predict():
+    put_row([put_image('https://hukum.ipb.ac.id/wp-content/uploads/2021/05/Logo-IPB-University-Horizontal-1536x402.png'), None, put_markdown('### PUSAT STUDI BIOFARMAKA TROPIKA<br/>LPPM IPB')])
+    
     ligand0 = input("Enter the PubChem ID of ligand: ", type=NUMBER)
     target0 = input("Enter the UniProt ID of protein target: ", type=TEXT)
 
