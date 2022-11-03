@@ -40,15 +40,17 @@ def predict():
     ligand_protein = list0 + target
 
     input0 = pd.DataFrame(ligand_protein).transpose()
+    
+    put_text(input0)
 
-    prediction = model.predict([[input0]])
-    output = round(prediction[0], 10)
+#     prediction = model.predict([[input0]])
+#     output = round(prediction[0], 10)
 
-    if output < 0:
-        put_text("Sorry, the ligand protein interaction cannot be predicted")
+#     if output < 0:
+#         put_text("Sorry, the ligand protein interaction cannot be predicted")
 
-    else:
-        put_text('Your ligand protein interaction prediction score is:', output)
+#     else:
+#         put_text('Your ligand protein interaction prediction score is:', output)
         
     # Year = input("Enter the Model Year：", type=NUMBER)
     # Year = 2021 - Year
