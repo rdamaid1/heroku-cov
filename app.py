@@ -50,7 +50,14 @@ def predict():
         put_text("Sorry, the ligand protein interaction cannot be predicted")
 
     else:
-        put_text('Your ligand protein interaction prediction score is:', output*100, "%")
+        put_table([
+            ['Content', 'Description'],
+            ['Drug (ligand)', str(ligand0)],
+            ['Target (protein)', target0],
+            ['Prediction score', str(output*100) + ' %']
+        ])
+    
+    put_button('Predict another interaction...', onclick = lambda: run_js('window.location.reload()'))
         
     # Year = input("Enter the Model Year：", type=NUMBER)
     # Year = 2021 - Year
