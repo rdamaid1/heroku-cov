@@ -41,7 +41,7 @@ def predict():
 
     input0 = pd.DataFrame(ligand_protein).transpose()
     
-    put_text(input0)
+#     put_text(input0)
 
     prediction = model.predict([[input0]])
     output = np.round(prediction[0], 10)
