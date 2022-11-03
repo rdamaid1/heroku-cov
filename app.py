@@ -57,7 +57,7 @@ def predict():
             ['Prediction score', str(format(output*100, '.5f')) + ' %']
         ])
     
-    put_button('Predict another interaction...', onclick = lambda: run_js('window.location.reload()'))
+    put_button('Predict another interaction', onclick = lambda: run_js('window.location.reload()'))
         
     # Year = input("Enter the Model Year：", type=NUMBER)
     # Year = 2021 - Year
