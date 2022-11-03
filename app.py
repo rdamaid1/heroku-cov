@@ -16,7 +16,7 @@ from tensorflow import keras
 
 import pickle
 import numpy as np
-model = pickle.load(open('sae_dnn.pkl', 'rb'))
+model = keras.models.load_model('model_sae_dnn')
 app = Flask(__name__)
 
 
@@ -39,6 +39,17 @@ def predict():
 
     ligand_protein = list0 + target
 
+    input0 = pd.DataFrame(ligand_protein).transpose()
+
+    prediction = model.predict([[input0]])
+    output = round(prediction[0], 10)
+
+    if output < 0:
+        put_text("Sorry, the ligand protein interaction cannot be predicted")
+
+    else:
+        put_text('Your ligand protein interaction prediction score is:', output)
+        
     # Year = input("Enter the Model Year：", type=NUMBER)
     # Year = 2021 - Year
     # Present_Price = input("Enter the Present Price(in LAKHS)", type=FLOAT)
@@ -66,16 +77,6 @@ def predict():
     # else:
     #     Transmission = 40
 
-    input0 = pd.DataFrame(ligand_protein).transpose()
-
-    prediction = model.predict([[input0]])
-    output = round(prediction[0], 10)
-
-    if output < 0:
-        put_text("Sorry, the ligand protein interaction cannot be predicted")
-
-    else:
-        put_text('Your ligand protein interaction prediction score is:', output)
 
 app.add_url_rule('/tool', 'webio_view', webio_view(predict),
             methods=['GET', 'POST', 'OPTIONS'])
